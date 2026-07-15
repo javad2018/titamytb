@@ -3,10 +3,16 @@
 # فایل: bot.py
 # ============================================================
 # توکن ربات را اینجا قرار دهید ↓↓↓
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+#BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
 # ============================================================
-
 import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is not set.")
+
+#import os
 import re
 import asyncio
 import tempfile
